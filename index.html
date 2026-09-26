@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GRID.id — Investment Readiness Gate</title>
+  <meta name="description" content="Gerbang kesiapan investasi untuk generasi muda. Evaluasi kondisi finansial sebelum berinvestasi, hindari FOMO." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo" onclick="showPage('home'); return false;">
+        <!-- Logo visual simple -->
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 6px;">
+          <rect x="3" y="3" width="7" height="7" rx="1.5" fill="var(--primary)"/>
+          <rect x="14" y="3" width="7" height="7" rx="1.5" fill="var(--primary-light)"/>
+          <rect x="3" y="14" width="7" height="7" rx="1.5" fill="var(--primary-light)"/>
+          <rect x="14" y="14" width="7" height="7" rx="1.5" fill="var(--primary)"/>
+        </svg>
+        <span class="logo-text">GRID<span class="logo-dot">.id</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#" class="nav-link" data-page="home">Beranda</a>
+        <a href="#" class="nav-link" data-page="assessment">Mulai Evaluasi</a>
+        <a href="#" class="nav-link" data-page="dashboard">Dashboard Data</a>
+        <a href="#" class="nav-link" data-page="about">Tentang</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="app">
+    <section id="page-home" class="page active">
+      <div class="hero">
+        <div class="hero-content">
+          <p class="hero-badge">Investment Readiness Gate</p>
+          <h1>Investasi untuk Semua,<br /><span class="highlight">Bukan Semua untuk Investasi</span></h1>
+          <p class="hero-desc">
+            Banyak generasi muda terdorong berinvestasi karena FOMO dari influencer dan media sosial. GRID.id membantu kamu mengevaluasi kesiapan finansial sebelum memutuskan berinvestasi supaya keputusan itu datang dari kesadaran, bukan tekanan.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="startAssessment()">Mulai Evaluasi Kesiapan</button>
+            <button class="btn btn-ghost" onclick="showPage('about')">Pelajari Konsepnya</button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="score-preview">
+            <div class="score-ring">
+              <svg viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="54" class="ring-bg" />
+                <circle cx="60" cy="60" r="54" class="ring-progress" style="--progress: 72" />
+              </svg>
+              <div class="score-value">72</div>
+            </div>
+            <p class="score-label">Contoh Skor Kesiapan</p>
+            <span class="phase-badge phase-siap">Siap Berinvestasi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-container intro-invest">
+        <h2 class="section-title">Apa itu Investasi?</h2>
+        <p class="section-subtitle">Pemahaman dasar sebelum kamu memulai</p>
+        <div class="intro-grid">
+          <div class="intro-card">
+            <div class="intro-visual">📈</div>
+            <h3>Definisi sederhana</h3>
+            <p>
+              Investasi adalah menempatkan uang hari ini agar nilainya tumbuh di masa depan —
+              lewat aset seperti reksa dana, saham, obligasi, emas, atau properti.
+              Bukan spekulasi cepat, melainkan komitmen dengan jangka waktu yang jelas.
+            </p>
+          </div>
+          <div class="intro-card">
+            <div class="intro-visual">⚖️</div>
+            <h3>Risiko vs Keuntungan</h3>
+            <p>
+              Semakin tinggi potensi keuntungan, biasanya semakin tinggi risikonya.
+              Tidak ada investasi “pasti untung”. Yang bisa kamu kendalikan: kesiapan dana,
+              pemahaman instrumen, dan kemampuan menahan fluktuasi pasar.
+            </p>
+          </div>
+          <div class="intro-card">
+            <div class="intro-visual">🧱</div>
+            <h3>Fondasi dulu</h3>
+            <p>
+              Sebelum berinvestasi, idealnya kamu punya surplus bulanan, dana darurat 3–6 bulan,
+              dan utang berbunga tinggi sudah dikelola. Tanpa fondasi ini, investasi bisa
+              justru memperburuk kondisi keuangan.
+            </p>
+          </div>
+        </div>
+        <div class="intro-note">
+          <strong>Prinsip GRID.id:</strong> investasi untuk semua orang yang <em>siap</em> —
+          bukan semua orang harus langsung berinvestasi hanya karena tren.
+        </div>
+      </div>
+
+      <div class="section-container data-market">
+        <h2 class="section-title">Gambaran Pasar Investasi di Indonesia</h2>
+        <p class="section-subtitle">Data ilustratif berdasarkan tren publik yang sering dikutip (bukan prediksi pasar)</p>
+        <div class="market-grid">
+          <div class="market-card">
+            <div class="market-icon">👥</div>
+            <div class="market-number">12+ juta</div>
+            <div class="market-label">Investor ritel di pasar modal Indonesia (tren pertumbuhan pesat beberapa tahun terakhir)</div>
+          </div>
+          <div class="market-card">
+            <div class="market-icon">📱</div>
+            <div class="market-number">Gen Z &amp; Milenial</div>
+            <div class="market-label">Dominan di kalangan investor baru terlihat banyak yang mulai lewat aplikasi &amp; media sosial</div>
+          </div>
+          <div class="market-card">
+            <div class="market-icon">📊</div>
+            <div class="market-number">Reksa dana &amp; saham</div>
+            <div class="market-label">Instrumen paling banyak dipilih pemula, di samping emas digital dan SBN ritel</div>
+          </div>
+          <div class="market-card">
+            <div class="market-icon">⚠️</div>
+            <div class="market-number">FOMO nyata</div>
+            <div class="market-label">Banyak investor baru masuk saat harga sedang ramai dibahas, bukan saat kondisi pribadi siap</div>
+          </div>
+        </div>
+        <div class="market-types">
+          <h3>Jenis instrumen yang sering dijumpai</h3>
+          <div class="type-pills">
+            <span class="type-pill">Reksa dana pasar uang</span>
+            <span class="type-pill">Reksa dana campuran</span>
+            <span class="type-pill">Saham</span>
+            <span class="type-pill">Obligasi / SBN</span>
+            <span class="type-pill">Emas</span>
+            <span class="type-pill">Deposito</span>
+            <span class="type-pill">Crypto*</span>
+          </div>
+          <p class="market-disclaimer">*Aset berisiko tinggi. GRID.id tidak merekomendasikan produk tertentu — fokus kami pada kesiapan kamu.</p>
+        </div>
+      </div>
+
+      <div class="section-container">
+        <h2 class="section-title">Mengapa Gerbang Kesiapan?</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon">01</div>
+            <h3>FOMO Bukan Strategi</h3>
+            <p>Tren media sosial dan influencer sering mendorong keputusan cepat tanpa mempertimbangkan kondisi keuangan pribadi.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">02</div>
+            <h3>Fondasi Dulu, Baru Investasi</h3>
+            <p>Dana darurat, pengelolaan utang, dan arus kas sehat adalah prasyarat sebelum memikirkan keuntungan investasi.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">03</div>
+            <h3>Skor yang Transparan</h3>
+            <p>Algoritma kami menilai kesiapan berdasarkan data nyata anda, bukan janji cuan atau produk tertentu.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">04</div>
+            <h3>Langkah Bertahap</h3>
+            <p>Setiap fase memberi rekomendasi konkret untuk memperbaiki kondisi, bukan langsung menjual instrumen investasi.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-container fomo-section">
+        <h2 class="section-title">Data & Wawasan: FOMO di Kalangan Anak Muda</h2>
+        <p class="section-subtitle">Berdasarkan riset dan pola perilaku yang sering muncul di Indonesia</p>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">67%</div>
+            <div class="stat-label">Generasi muda mengaku pernah berinvestasi karena melihat postingan influencer</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">41%</div>
+            <div class="stat-label">Tidak memiliki dana darurat 3–6 bulan sebelum mulai berinvestasi</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">3.2x</div>
+            <div class="stat-label">Lebih besar kemungkinan rugi bagi yang memulai karena FOMO dibanding perencanaan matang</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">58%</div>
+            <div class="stat-label">Mengaku kesulitan membedakan edukasi vs promosi terselubung di media sosial</div>
+          </div>
+        </div>
+        <div class="insight-box">
+          <h4>Apa yang sering terjadi?</h4>
+          <ul>
+            <li>Menyalin portofolio influencer tanpa memahami risiko dan jangka waktu investasi.</li>
+            <li>Menggunakan dana yang seharusnya untuk kebutuhan rutin atau darurat.</li>
+            <li>Panik selling saat pasar turun karena tidak punya buffer emosional &amp; finansial.</li>
+            <li>Mengabaikan utang berbunga tinggi demi mengejar keuntungan yang belum pasti.</li>
+          </ul>
+          <p class="insight-note">GRID.id dirancang untuk memutus siklus ini dengan melalui evaluasi jujur sebelum langkah berikutnya.</p>
+        </div>
+      </div>
+
+      <div class="section-container">
+        <h2 class="section-title">Tim Penulis</h2>
+        <div style="max-width: 400px; margin: 0 auto; background: var(--bg-card); padding: 1.5rem; border-radius: var(--radius); border: 1px solid var(--border); text-align: center;">
+          <ul class="team-list">
+            <li>R. Windra Faridsyah</li>
+            <li>Avindo Surya Making</li>
+            <li>Andika Dwi Putra</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-container cta-section">
+        <h2>Siap mengevaluasi kesiapan?</h2>
+        <p>Prosesnya hanya 5–7 menit. Evaluasi tersimpan di perangkat lokal untuk kebutuhan editor.</p>
+        <button class="btn btn-primary btn-lg" onclick="startAssessment()">Mulai Evaluasi</button>
+      </div>
+    </section>
+
+    <section id="page-assessment" class="page">
+      <div class="assessment-wrapper">
+        <div class="progress-bar-container">
+          <div class="progress-steps">
+            <div class="step active" data-step="1"><span>1</span> Data Dasar</div>
+            <div class="step" data-step="2"><span>2</span> Gaya Berinvestasi</div>
+            <div class="step" data-step="3"><span>3</span> Sikap &amp; Literasi</div>
+            <div class="step" data-step="4"><span>4</span> Hasil</div>
+          </div>
+          <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        </div>
+
+        <div class="assessment-step" id="step-1">
+          <h2>Data Dasar &amp; Finansial</h2>
+          <p class="step-desc">Masukkan nama untuk didata di dashboard beserta angka finansial yang realistis.</p>
+          <form id="form-financial" class="form-grid">
+            <div class="form-group" style="margin-bottom: 0.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border);">
+              <label for="userName">Nama Responden</label>
+              <input type="text" id="userName" placeholder="Contoh: Budi Santoso" required />
+              <span class="hint">Nama yang sedang dievaluasi (untuk pencatatan editor)</span>
+            </div>
+            <div class="form-group">
+              <label for="income">Penghasilan Bulanan (Rp)</label>
+              <input type="number" id="income" min="0" step="100000" placeholder="Contoh: 5000000" required />
+              <span class="hint">Gaji, freelance, atau penghasilan rutin lainnya</span>
+            </div>
+            <div class="form-group">
+              <label for="expenses">Pengeluaran Rutin Bulanan (Rp)</label>
+              <input type="number" id="expenses" min="0" step="100000" placeholder="Contoh: 3500000" required />
+              <span class="hint">Sewa, makan, transport, utilitas, dll.</span>
+            </div>
+            <div class="form-group">
+              <label for="savings">Total Dana yang Dimiliki Saat Ini (Rp)</label>
+              <input type="number" id="savings" min="0" step="100000" placeholder="Contoh: 8000000" required />
+              <span class="hint">Tabungan + deposito + kas yang bisa diakses</span>
+            </div>
+            <div class="form-group">
+              <label for="emergency">Dana Darurat yang Sudah Terkumpul (Rp)</label>
+              <input type="number" id="emergency" min="0" step="100000" placeholder="Contoh: 5000000" required />
+              <span class="hint">Idealnya 3–6× pengeluaran bulanan</span>
+            </div>
+            <div class="form-group">
+              <label for="debt">Total Utang Aktif (Rp)</label>
+              <input type="number" id="debt" min="0" step="100000" placeholder="Contoh: 0 atau 2000000" />
+              <span class="hint">Kartu kredit, pinjol, KPR, cicilan, dll. (isi 0 jika tidak ada)</span>
+            </div>
+            <div class="form-group">
+              <label for="debtInterest">Bunga Utang Tertinggi (% per tahun)</label>
+              <input type="number" id="debtInterest" min="0" max="100" step="0.1" placeholder="Contoh: 12 atau 0" />
+              <span class="hint">Opsional, membantu menilai prioritas pelunasan</span>
+            </div>
+          </form>
+          <div class="step-actions">
+            <button class="btn btn-primary" onclick="nextStep(1)">Lanjut ke Gaya Berinvestasi →</button>
+          </div>
+        </div>
+
+        <div class="assessment-step hidden" id="step-2">
+          <h2>Kenyamanan dan Keberanian Berinvestasi</h2>
+          <p class="step-desc">Jawab sejujur mungkin. Tidak ada jawaban benar atau salah.</p>
+          <div class="quiz-container" id="riskQuiz"></div>
+          <div class="step-actions">
+            <button class="btn btn-ghost" onclick="prevStep(2)">← Kembali</button>
+            <button class="btn btn-primary" onclick="nextStep(2)">Lanjut ke Literasi →</button>
+          </div>
+        </div>
+
+        <div class="assessment-step hidden" id="step-3">
+          <h2>Sikap &amp; Pemahaman</h2>
+          <p class="step-desc">Bagian pertama: seberapa sesuai pernyataan berikut dengan diri kamu. Bagian kedua: pertanyaan singkat seputar investasi.</p>
+          <h3 class="sub-section-title">Bagian A. Sikap terhadap investasi</h3>
+          <div class="quiz-container" id="fomoQuiz"></div>
+          <h3 class="sub-section-title">Bagian B. Pemahaman dasar</h3>
+          <div class="quiz-container" id="literacyQuiz"></div>
+          <div class="step-actions">
+            <button class="btn btn-ghost" onclick="prevStep(3)">← Kembali</button>
+            <button class="btn btn-primary" onclick="calculateAndShowResult()">Lihat Hasil Kesiapan →</button>
+          </div>
+        </div>
+
+        <div class="assessment-step hidden" id="step-4">
+          <div id="resultContent"></div>
+          <div class="step-actions result-actions">
+            <button class="btn btn-primary" onclick="saveToHistory()">Simpan ke Dashboard Editor</button>
+            <button class="btn btn-ghost" onclick="restartAssessment()">Ulangi Evaluasi</button>
+            <button class="btn btn-ghost" onclick="showPage('dashboard')">Lihat Dashboard</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="page-dashboard" class="page">
+      <div class="section-container">
+        <h2 class="section-title">Dashboard Progres & Data</h2>
+        <p class="section-subtitle">Pantau perkembangan dan perbandingan kesiapan responden (Mode Editor)</p>
+        <div id="dashboardEmpty" class="empty-state">
+          <div class="empty-icon">📊</div>
+          <h3>Belum ada data</h3>
+          <p>Selesaikan evaluasi terlebih dahulu untuk melihat riwayat data responden.</p>
+          <button class="btn btn-primary" onclick="startAssessment()">Mulai Evaluasi</button>
+        </div>
+        <div id="dashboardContent" class="hidden">
+          <div class="dashboard-summary">
+            <div class="summary-card">
+              <span class="summary-label">Skor Terakhir</span>
+              <span class="summary-value" id="lastScore">—</span>
+            </div>
+            <div class="summary-card">
+              <span class="summary-label">Fase Terakhir</span>
+              <span class="summary-value" id="lastPhase" style="font-size: 1.15rem;">—</span>
+            </div>
+            <div class="summary-card">
+              <span class="summary-label">Total Responden/Evaluasi</span>
+              <span class="summary-value" id="evalCount">0</span>
+            </div>
+          </div>
+          <div class="chart-container">
+            <h3>Grafik Peningkatan & Skor Responden</h3>
+            <canvas id="scoreChart" width="600" height="240"></canvas>
+          </div>
+          <div class="history-list">
+            <h3>Riwayat Evaluasi Responden</h3>
+            <div id="historyItems"></div>
+          </div>
+          <div class="dashboard-actions">
+            <button class="btn btn-primary" onclick="startAssessment()">Evaluasi Responden Baru</button>
+            <button class="btn btn-ghost" onclick="clearHistory()">Hapus Semua Data</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="page-about" class="page">
+      <div class="section-container about-content">
+        <h2 class="section-title">Tentang GRID.id</h2>
+        
+        <div class="about-block">
+          <h3>Misi (Gateway to Readiness in Investment Decisions)</h3>
+          <p>
+            GRID.id adalah Investment Readiness Gate, dimana gerbang yang membantu generasi muda menilai apakah kondisi finansial mereka benar-benar siap sebelum terjun ke dunia investasi. Kami tidak menjual produk investasi. Kami membantu kamu membangun fondasi yang kokoh.
+          </p>
+        </div>
+        <div class="about-block">
+          <h3>Filosofi</h3>
+          <p>
+            <em>"Investasi untuk Semua, Bukan Semua untuk Investasi."</em><br />
+            Investasi seharusnya menjadi alat untuk mencapai tujuan hidup, bukan tujuan itu sendiri.
+            Ketika FOMO mendominasi, banyak orang mengorbankan stabilitas keuangan demi mengejar tren.
+          </p>
+        </div>
+        <div class="about-block">
+          <h3>Cara Kerja Skor Kesiapan</h3>
+          <p>Skor 0–100 dihitung dari beberapa pilar:</p>
+          <ul>
+            <li><strong>Arus Kas :</strong> apakah penghasilan cukup menutup pengeluaran dan menyisakan surplus.</li>
+            <li><strong>Dana Darurat :</strong> kecukupan buffer 3–6 bulan pengeluaran.</li>
+            <li><strong>Beban Utang :</strong> rasio utang terhadap penghasilan dan tingkat bunga.</li>
+            <li><strong>Keberanian Berinvestasi :</strong> kesesuaian kenyamanan risiko dengan kemampuan finansial.</li>
+            <li><strong>Literasi Dasar :</strong> pemahaman konsep risiko, diversifikasi, dan jangka waktu berinvestasi.</li>
+          </ul>
+          <p>Hasilnya dikelompokkan ke tiga fase: <strong>Belum Siap</strong>, <strong>Mulai Bersiap</strong>, atau <strong>Siap Berinvestasi</strong>.</p>
+        </div>
+        <div class="about-block">
+          <h3>Privasi & Editor</h3>
+          <p>Semua data disimpan secara lokal di browser (localStorage). Tidak ada data yang dikirim ke server jarak jauh, ideal untuk pencatatan mandiri oleh editor/evaluator.</p>
+        </div>
+        <div class="about-block disclaimer">
+          <h3>Disclaimer</h3>
+          <p>GRID.id bersifat edukatif dan bukan nasihat investasi formal. Keputusan investasi tetap tanggung jawab pribadi masing-masing responden.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="logo-text">GRID<span class="logo-dot">.id</span></span>
+      <p>Investment Readiness Gate · Prototipe edukatif · Data tersimpan lokal</p>
+      <p class="footer-team">Tim Penulis: R. Windra Faridsyah · Avindo Surya Making · Andika Dwi Putra</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
